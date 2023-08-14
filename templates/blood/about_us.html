@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harry Fitness</title>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css" integrity="sha384-X8QTME3FCg1DLb58++lPvsjbQoCT9bp3MsUU3grbIny/3ZwUJkRNO8NPW6zqzuW9" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="css/style.css"> -->
+<style>
+    *{margin: 0px;
+    padding:0px;
+box-sizing: border-box;}
+    /* CSS Reset */
+    body {
+        font-family: 'Baloo Bhai', cursive;
+        color: green;
+        margin: 0px;
+        padding: 0px;
+        background: url('img/bg.jpg');
+        
+    }
+
+    .left {
+        display: inline-block;
+        /* border: 2px solid red; */
+        position: absolute;
+        left: 60px;
+        top: 20px;
+    }
+
+    .left img {
+        width: 100px;
+        filter: invert(100%);
+    }
+
+    .left div {
+        line-height: 19px;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .mid {
+        display: block;
+        width: 36%;
+        margin: 29px auto;
+        /* border: 2px solid green; */
+    }
+
+    .right {
+        position: absolute;
+        right: 34px;
+        top: 43px;
+        display: inline-block;
+        /* border: 2px solid yellow; */
+    }
+
+    .navbar {
+        display: inline-block;
+    }
+
+    .navbar li {
+        display: inline-block;
+        font-size: 25px;
+    }
+
+    .navbar li a {
+        color: black;
+        text-decoration: none;
+        padding: 34px 23px;
+
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: grey;
+
+    }
+
+    .btn {
+        font-family: 'Baloo Bhai', cursive;
+        margin: 0px 9px;
+        background-color: black;
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid grey;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(31, 30, 30);
+    }
+
+    .contact{
+        position:relative;
+        min-height: 100vh;
+        padding: 50px 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+     .contact .content{
+        max-width: 800px;
+        text-align: center;
+     }
+     .contact .content h2{
+        font-size: 50px;
+        font-weight: 50;
+        color: black;
+
+     }
+     .contact .content p{
+        font-size: 36px;
+        color:black;
+     }
+     .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+     }
+     .container .contactInfo{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+     }
+     .container .contactInfo .box{
+        position: relative;
+        padding: 20px 0;
+        display: flex;
+     }
+     .container .contactInfo .box .icon{
+        min-width: 60px;
+        height: 60px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 22px;
+     }
+     .container .contactInfo .box .text{
+        display: flex;
+        margin-left: 20px;
+        font-size: 16px;
+        color: black;
+        flex-direction: column;
+        font-weight: 800;
+
+     }
+     .container .contactInfo .box .text h3{
+        font-size: 30px;
+        color: green;
+        font-weight: 800;
+
+     }
+     .container .contactInfo .box .text {
+        font-size: 20px;
+        color: black;
+        font-weight: 800;
+        display: flex;
+        flex-direction: column;
+     }
+
+     .contactForm{
+        width: 40%;
+        padding: 40px;
+        background: brown;
+     }
+     .contactForm h2{
+        font-size: 30px;
+        color: black;
+        font-weight: 800;
+     }
+     .contactForm .inputBox{
+        position: relative;
+        width: 100%;
+        margin-top: 15px;
+     }
+     .contactForm .inputBox input{
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: black;
+     }
+     .contactForm .inputBox span{
+      color: black;
+      font-size: 15px;
+      padding: 10px 10px;
+      position: absolute;
+      left: 0;
+      pointer-events: none;
+      transition: 0.5%;
+      color: #666;
+     }
+     .contactForm .inputBox input:focus ~ span,
+     .contactForm .inputBox input:valid ~ span,
+     .contactForm .inputBox textarea:focus ~ span,
+     .contactForm .inputBox textarea:valid ~ span
+     {
+       color:black ;
+       font-size: 12px;
+       transform: translateY(-30px)
+     }
+     .contactForm .inputBox input[type="submit"]
+     {
+        width:100px;
+        background: blue;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+     }
+
+     @media(max-width: 991px)
+     {
+        .contact{
+            padding: 50px;
+        }
+        .container{
+            flex-direction: column;
+        }
+        .container .contactInfo{
+            margin-bottom: 40px;
+        }
+        .container .contactInfo{
+            width: 100%;
+        }
+     }
+
+	</style>
+	<body>
+		<header class="header">
+			<!-- Left box for logo -->
+			<div class="left">
+				<img src="img/logo.jpg" alt="">
+				<div>Resolve</div>
+			</div>
+			<!-- Mid box for navbar -->
+			<div class="mid">
+				<ul class="navbar">
+					<li><a href="index.html" >Home</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					
+					<li><a href="contact us.html" class="active">Contact Us</a></li>
+				</ul>
+			</div>
+	
+			<!-- Right box for buttons -->
+			<div class="right">
+				<button class="btn">Call Us Now</button>
+				<button class="btn">Email Us</button>
+			</div>
+		</header>
+        <section class="contact">
+            <div class="content">
+                <h2>Contact Us</h2>
+                <p>This is all about contact page</p>
+            </div>
+            <div class="container">
+                <div class="contactInfo">
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Address</h3>
+                                <p>301 B wing Sanyog Park <br> Badlapur , 421503</p>
+                            </div>
+                        
+
+                    </div>
+
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                            <div class="text">
+                                <h3>Phone No.</h3>
+                                <p>8421505681 <br> 9559886455</p>
+                            </div>
+                        
+
+                    </div>
+
+                    <div class="box">
+                        <div class="icon"><i class="fa fa-envelope" aria-hidden="true"></i>
+                            <div class="text">
+                                <h3>Email</h3>
+                                <p>20102169.adarsh.sharma@gmail.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="contactForm">
+                 <form>
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                       
+                       <textarea required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="send">
+                    </div>
+                 </form>
+
+                </div>
+            </div>
+        </section>
+
+       
+	</body>
+
+	</html>

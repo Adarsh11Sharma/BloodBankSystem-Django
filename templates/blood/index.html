@@ -1,0 +1,523 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <style>
+	@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+#team {
+    background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+  .container{
+    width: 110%;
+    height: 120vh;
+    background: #f8f9fa00;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+
+    .swiper {
+  width: 100%;
+  height:70%;
+
+}
+    .swiper-slide img {
+      width:100%;
+      
+    }
+    .swiper .swiper-button-prev, .swiper .swiper-button-next{
+      color:crimson;
+    }
+    .swiper .swiper-pagination-bullet-active {
+      color: crimson;
+    }
+  </style>
+    
+      
+</head>
+
+
+<body>
+  {% include "blood/navbar.html" %}
+
+<!-- Slider main container -->
+{% comment %} <div class="container">
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="{% static 'image/m.png' %}"></div>
+    <div class="swiper-slide"><img src="{% static 'image/blood_day.jfif' %}"></div>
+    <div class="swiper-slide"><img src="{% static 'image/child.jpeg' %}"></div>
+    ...
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>
+</div> {% endcomment %}
+
+<!-- Carousel  -->
+<br><br>
+<div class="carousel_slid">
+  <div class="opacity_carousel"></div>
+  <div id="slide" class="carousel slide" data-ride="carousel">
+      <!-- carousel indicators -->
+      <ul class="carousel-indicators">
+          <li data-target="#slide" data-slide-to="0" class="active"></li>
+          <li data-target="#slide" data-slide-to="1"></li>
+          <li data-target="#slide" data-slide-to="2"></li>
+      </ul>
+      <div class="carousel-inner">
+          <div class="carousel-item carousel-img-1 active">
+               <img  src="{% static 'image/slide1.jpg' %}" alt="Slide Image" style="height:500px;width:100%;"style="-webkit-filter: blur(4px); 
+               filter: blur(4px);">
+              <div class="carousel-caption">
+                  <h3 class="font-effect-fire" style="color:black "></h3>
+                  <p style="color:violet;"></p>
+              </div>
+          </div>
+          <!-- carousel item -->
+          <div class="carousel-item carousel-img-2">
+              <img src="{% static 'image/blood_day.jfif' %}" alt="Slid Image"style="height:500px;width:100%;">
+              <div class="carousel-caption">
+                  <h3 style="color:black"></h3>
+                  <p style="color:black"></p>
+              </div>
+          </div>
+          <div class="carousel-item carousel-img-3">
+              <img src="{% static 'image/child.jpeg' %}" alt="Slid Image"style="height:500px;width:100%;">
+              <div class="carousel-caption">
+                  <h3 style="color:red"></h3>
+                  <p style="color:red"></p>
+              </div>
+          </div>
+      </div>
+      <!-- carousel control -->
+      <a class="carousel-control-prev" href="#slide" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#slide" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+      </a>
+  </div>
+</div>
+
+{% include "blood/cards.html" %}
+<section id="features">
+
+
+
+  <div class="container">
+
+
+
+      <div class="row">
+
+
+
+          <div class="col-sm-6 wow fadeInLeft">
+
+
+
+              <div class="feature-image" style="height:335px; padding-top:0px"  >
+
+
+
+                  
+                  <img class="img-responsive" src="http://nbtc.naco.gov.in/assets/slider/img/infographic_1479129887.png" alt="about nbtc" title=""  style="width:300px; margin:0 auto" />
+
+
+
+              </div>
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <div class="col-sm-6 wow fadeInRight">
+
+
+
+              <div class="feature-wrapper">
+
+
+
+                  <div class="feature-content-wrapper" >
+
+
+
+                      <h2>About Blood Donation </h2>
+
+
+
+                    
+
+
+
+
+
+
+
+                      <div class="feature-box clearfix">
+
+
+
+                          <div class="feature-icon pull-left">
+
+
+
+                              <i class="fa fa-tint"></i>
+
+
+
+                          </div>
+
+
+
+                          <div class="feature-box-content">
+
+
+
+                              <a href="http://nbtc.naco.gov.in/page/beingadonor/"><h3>Being a Donor</h3></a>
+
+
+
+                              <p>Know more about different donors and blood donations. </p>
+
+
+
+                          </div>
+
+
+
+                      </div>
+
+
+
+                      <div class="feature-box clearfix">
+
+
+
+                          <div class="feature-icon pull-left">
+
+
+
+                              <i class="fa  fa-check-square-o"></i>
+
+
+
+                          </div>
+
+
+
+                          <div class="feature-box-content">
+
+
+
+                             <a href="http://nbtc.naco.gov.in/page/eligibility/"> <h3>Eligibility Requirements</h3></a>
+
+
+
+                              <p>Learn more about the eligibility requirements for donating blood.</p>
+
+
+
+                          </div>
+
+
+
+                      </div>
+
+
+
+                      <div class="feature-box clearfix">
+
+
+
+                          <div class="feature-icon pull-left">
+
+
+
+                              <i class="fa fa-retweet"></i>
+
+
+
+                          </div>
+
+
+
+                          <div class="feature-box-content">
+
+
+
+                              <a href="http://nbtc.naco.gov.in/page/donationprocess/"><h3>Donation Process</h3></a>
+
+
+
+                              <p>Know about the steps before, during and after blood donation.</p>
+
+
+
+                          </div>
+
+
+
+                      </div>
+
+
+
+                      
+
+
+
+                      <div class="feature-box clearfix">
+
+
+
+                          <div class="feature-icon pull-left">
+
+
+
+                              <i class="fa  fa-question-circle"></i>
+
+
+
+                          </div>
+
+
+
+                          <div class="feature-box-content">
+
+
+
+                            <a href="http://nbtc.naco.gov.in/faq/index/">  <h3>FAQs</h3></a>
+
+
+
+                              <p>General queries simply answered here for you.</p>
+
+
+
+                          </div>
+
+
+
+                      </div>
+
+
+
+                      
+
+
+
+                      
+
+
+
+                  </div>
+
+
+
+              </div>
+
+
+
+          </div><!-- Features right side end -->
+
+
+
+      </div><!-- Row end -->
+
+
+
+  </div><!-- Container end -->
+
+
+
+</section> <!-- Features end -->
+
+<!-- Optional JavaScript; choose one of the two! -->
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+<!-- <div class="jumbotron" style="margin-top: 0px;margin-bottom: 0px;">
+
+  <p class="lead text-center">Welcome To Blood-Hub
+    </p> -->
+  
+
+  
+<!-- </div> -->
+
+<!-- <section id="section-jumbotron" style="margin-bottom: 0px;" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center xyz">
+    <div class="container text-center">
+    </div>  
+  </section> -->
+
+  {% include "blood/footer.html" %}
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js">
+  </script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      autoplay:{
+        delay:3000,
+        disableOnInteraction: false,
+      },
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable:true
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+  </script>
+</body>
+
+</html>
